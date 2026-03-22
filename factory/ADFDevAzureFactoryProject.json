@@ -1,0 +1,9 @@
+{
+	"name": "ADFDevAzureFactoryProject",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "2e0ab559-efc9-4367-be30-ca93407ebbd2",
+		"tenantId": "9462ecb5-6ebf-42c6-8604-41a8881cf0df"
+	}
+}

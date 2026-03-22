@@ -1,0 +1,24 @@
+{
+	"name": "PL_Validation_Act",
+	"properties": {
+		"activities": [
+			{
+				"name": "ValidationCSV_File",
+				"type": "Validation",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"dataset": {
+						"referenceName": "DelimitedText1",
+						"type": "DatasetReference"
+					},
+					"timeout": "0.12:00:00",
+					"sleep": 10
+				}
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2026-03-15T15:55:40Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

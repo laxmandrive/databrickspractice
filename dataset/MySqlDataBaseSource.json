@@ -1,0 +1,16 @@
+{
+	"name": "MySqlDataBaseSource",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LSMySql",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "MySqlTable",
+		"schema": [],
+		"typeProperties": {
+			"tableName": "`employee`"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
