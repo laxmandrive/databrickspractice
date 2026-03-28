@@ -1,0 +1,24 @@
+{
+	"name": "DS_SQLTALE_Parquet1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_MIgrationProject_SQL",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"Table_Name": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileSystem": "migrationprojectsqldata"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	}
+}
