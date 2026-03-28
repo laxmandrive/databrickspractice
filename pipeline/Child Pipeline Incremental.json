@@ -78,7 +78,24 @@
 									"queryTimeout": "02:00:00",
 									"partitionOption": "None"
 								},
-								"enableStaging": false
+								"sink": {
+									"type": "ParquetSink",
+									"storeSettings": {
+										"type": "AzureBlobFSWriteSettings"
+									},
+									"formatSettings": {
+										"type": "ParquetWriteSettings"
+									}
+								},
+								"enableStaging": false,
+								"translator": {
+									"type": "TabularTranslator",
+									"typeConversion": true,
+									"typeConversionSettings": {
+										"allowDataTruncation": true,
+										"treatBooleanAsNumber": false
+									}
+								}
 							},
 							"inputs": [
 								{
@@ -95,10 +112,16 @@
 										}
 									}
 								}
+							],
+							"outputs": [
+								{
+									"referenceName": "DS_SQLTALE_Parquet1",
+									"type": "DatasetReference"
+								}
 							]
 						},
 						{
-							"name": "Exe_Update_Watermark",
+							"name": "EXEC_UPDATE_WATERMARK",
 							"type": "ExecutePipeline",
 							"dependsOn": [
 								{
@@ -113,6 +136,10 @@
 							},
 							"userProperties": [],
 							"typeProperties": {
+								"pipeline": {
+									"referenceName": "pipeline1",
+									"type": "PipelineReference"
+								},
 								"waitOnCompletion": true
 							}
 						}
